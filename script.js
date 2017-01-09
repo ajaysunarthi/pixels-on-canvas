@@ -12,7 +12,10 @@ function process(imgEl) {
         filter: filter
     };
 
-    console.log(obj);
+    // worker for non blocking calculation 
+    worker = new Worker('worker.js');
+
+    worker.postMessage(obj);
 
     function getPixels(img) {
         var canvas, context;
