@@ -19,7 +19,7 @@ function process(imgEl) {
 
     worker.onmessage = function(e) {
 
-        randerCanvas(e.data);
+        renderCanvas(imgEl, e.data);
 
     };
 
@@ -38,7 +38,12 @@ function process(imgEl) {
         return canvas;
     }
 
-    function randerCanvas(new_pixels) {
-    	
+    function renderCanvas(img, new_pixels) {
+        var canvas, context;
+        canvas = getCanvas(img.width, img.height);
+        context = canvas.getContext("2d");
+        context.putImageData(new_pixels, 0, 0);
+        img.src = canvas.toDataURL();
+        return;
     }
 }
