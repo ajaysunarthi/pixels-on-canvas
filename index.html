@@ -6,7 +6,45 @@
 	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-	
+	<h4>Simple filters on images by manipulating Uint8ClampedArray over the Canvas element</h4>
+	    <div class="container">
+        <div class="block">
+            <p>Original</p>
+            <img src="main.png">
+        </div>
+        <div class="block">
+            <p>Sepia</p>
+            <img src="main.png" class="i" data-filter="sepia">
+        </div>
+        <div class="block">
+            <p>Gray Scale</p>
+            <img src="main.png" class="i" data-filter="grayscale">
+        </div>
+        <div class="block">
+            <p>invert</p>
+            <img src="main.png" class="i" data-filter="invert">
+        </div>
+        <div class="block">
+            <p>Opacity .5</p>
+            <img src="main.png" class="i" data-filter="Opacity">
+        </div>
+        <div class="block">
+            <p>luminance</p>
+            <img src="main.png" class="i" data-filter="luminance">
+        </div>
+        <div class="block">
+            <p>enhance</p>
+            <img src="main.png" class="i" data-filter="enhance">
+        </div>
+        <div class="block">
+            <p>darken</p>
+            <img src="main.png" class="i" data-filter="darken">
+        </div>
+        <div class="block">
+            <p>threshold</p>
+            <img src="main.png" class="i" data-filter="threshold">
+        </div>
+    </div>
 	<script src="script.js"></script>
 </body>
 </html>
