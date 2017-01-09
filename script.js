@@ -3,8 +3,8 @@ Array.prototype.forEach.call(document.querySelectorAll('.i'), function(Elm) {
 });
 
 function process(imgEl) {
-	//processing
-	var pixArr = getPixels(imgEl);
+    //processing
+    var pixArr = getPixels(imgEl);
     var filter = imgEl.dataset.filter;
 
     obj = {
@@ -16,6 +16,12 @@ function process(imgEl) {
     worker = new Worker('worker.js');
 
     worker.postMessage(obj);
+
+    worker.onmessage = function(e) {
+
+        randerCanvas(e.data);
+
+    };
 
     function getPixels(img) {
         var canvas, context;
@@ -30,5 +36,9 @@ function process(imgEl) {
         canvas.width = width;
         canvas.height = height;
         return canvas;
+    }
+
+    function randerCanvas(new_pixels) {
+    	
     }
 }

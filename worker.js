@@ -1,6 +1,5 @@
 onmessage = function(e) {
-    var result = imageProcess(e.data);
-    console.log(result);
+    postMessage(imageProcess(e.data));
 }
 
 function imageProcess(data) {
