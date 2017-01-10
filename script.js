@@ -1,7 +1,3 @@
-Array.prototype.forEach.call(document.querySelectorAll('.i'), function(Elm) {
-    process(Elm);
-});
-
 function process(imgEl) {
     //processing
     var pixArr = getPixels(imgEl);
@@ -47,3 +43,20 @@ function process(imgEl) {
         return;
     }
 }
+
+var imgs = document.images,
+    len = imgs.length,
+    counter = 0;
+
+Array.prototype.forEach.call(imgs, function(img) {
+    img.addEventListener('load', incrementCounter, false);
+});
+
+function incrementCounter() {
+    counter++;
+    if (counter === len) {
+        Array.prototype.forEach.call(document.querySelectorAll('.i'), function(Elm) {
+            process(Elm);
+        });
+    }
+};
